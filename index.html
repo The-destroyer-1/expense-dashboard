@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="486b3694469531.Y3JvcCwxNTI5LDExOTYsMjE5LDA (1).png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RATL EXPENSE</title>
+  </head>
+  <body>
+    <!-- Diagnostic placeholder: will be replaced by React when it mounts -->
+    <div id="root">Loading app... If this message remains, React did not mount.</div>
+
+    <!-- Diagnostic helper: capture runtime errors and show them in-page -->
+    <script>
+      (function(){
+        function show(msg){
+          try{
+            var r = document.getElementById('root');
+            if(r) r.textContent = String(msg);
+          }catch(e){/* ignore */}
+        }
+        window.addEventListener('error', function(ev){
+          var m = ev && (ev.message || (ev.error && ev.error.message)) || String(ev);
+          var loc = (ev && ev.filename) ? (ev.filename + ':' + ev.lineno + ':' + ev.colno) : '';
+          show('Runtime error: ' + m + '\n' + loc);
+          console.error(ev.error || ev.message || ev);
+        });
+        window.addEventListener('unhandledrejection', function(ev){
+          var reason = ev && ev.reason ? (ev.reason.message || String(ev.reason)) : String(ev);
+          show('Unhandled promise rejection: ' + reason);
+          console.error('Unhandled rejection', ev.reason);
+        });
+      })();
+    </script>
+
+    <script type="module" src="src/main.tsx"></script>
+  </body>
+</html>

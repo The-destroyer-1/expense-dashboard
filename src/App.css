@@ -1,0 +1,68 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Truck animation styles */
+.truck-track { height: 56px; }
+.truck { top: 0; left: -200px; animation: truck-drive var(--truck-duration, 12s) linear infinite; }
+
+@keyframes truck-drive {
+  0% { transform: translateX(-220px) translateY(0) rotate(0.001deg); }
+  50% { transform: translateX(50vw) translateY(-4px) rotate(0.001deg); }
+  100% { transform: translateX(120vw) translateY(0) rotate(0.001deg); }
+}
+
+/* Pause animation when hovering the truck */
+.truck-track:hover .truck,
+.truck:hover { animation-play-state: paused; }
+
+/* make sure svg scales nicely */
+.truck svg { height: 56px; width: auto; display: block; }
+
+/* Wheel rotation */
+.wheel-rotate { transform-origin: center; transform-box: fill-box; }
+.wheel-rotate circle { animation: wheel-spin 0.6s linear infinite; transform-origin: center; transform-box: fill-box; }
+
+@keyframes wheel-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
